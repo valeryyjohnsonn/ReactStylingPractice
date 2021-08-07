@@ -9,24 +9,24 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 const currentTime = new Date().getHours();
-let timeOfDayColor = "";
-let timeOfDay = "";
+let timeOfDayColor;
+let greeting;
 
 if (currentTime < 12 && currentTime >= 0) {
-  timeOfDay = "Morning";
+  greeting = "Good Morning";
   timeOfDayColor = "red";
 } else if (currentTime > 12 && currentTime <= 18) {
-  timeOfDay = "Afternoon";
+  greeting = "Good Afternoon";
   timeOfDayColor = "green";
 } else if (currentTime > 18 && currentTime <= 24) {
-  timeOfDay = "Evening";
+  greeting = "Good Evening";
   timeOfDayColor = "blue";
 }
 
 ReactDOM.render(
   <div>
     <h1 className="heading" style={{ color: timeOfDayColor }}>
-      Good {timeOfDay}!
+      {greeting}!
     </h1>
   </div>,
   document.getElementById("root")
